@@ -1,12 +1,152 @@
 <!DOCTYPE html>
+
 <html lang="en">
+<title>r-s</title>
+<link rel="stylesheet" href="styles/esth.css">
+
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Artist Website</title>
+
+  <title>riccardo santalucia</title>
+
+  <!-- META -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="frame.js"></script>
+  <script src="jquery-3.3.1.min.js"></script>
+
 </head>
-<body>
-    <h1>Welcome to My Artist Website</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+<body class="bodyIndex">
+
+  <header class="headerIndex">
+    <a class="header_text" href="http://riccardosantalucia.com">RICCARDO SANTALUCIA</a>
+  </header>
+
+  <div class="top-bar">
+  </div>
+
+  <div class="content">
+    <nav class="nav_scroll">
+
+      <div class="spadino"><button class="tablinks" onclick="openNav(event, 'Works')">Works</button><div class="s-popUP" style="padding:0px; font-size: 13px;">--+-</div></div>
+      <div class="spadino"><button class="tablinks" onclick="loadPage('nav_pages/bio.html'); openNav(event, 'none')"><span>Bio</span></button><div class="s-popUP" style="padding:0px; font-size: 13px;">--+-</div></div>
+      <div class="spadino"><button class="tablinks" onclick="loadPage('nav_pages/contatti.html'); openNav(event, 'none')">Contatti</button><div class="s-popUP" style="padding:0px; font-size: 13px;">--+-</div></div>
+
+      <section class="submenu">
+        <!-- MENU WORKS -->
+        <div id="Works" class="tabcontent">
+          <ul id="worksList">
+            <li>
+              <button onclick="loadPage('works/cantiOrfici.html')">
+                <span>Canti Orfici: la notte, la Verna</span></button>
+              <div class="s-popUP">--+-</div>
+            </li>
+            <li>
+              <button onclick="loadPage('lituoAcuspide.html')">
+              <span>Lituo a cuspide</span></button>
+              <div class="s-popUP">--+-</div>
+            </li>
+            <li><button onclick="loadPage('works/asemica.html')">
+              <span>Asemica</span></button>
+              <div class="s-popUP">--+-</div>
+            </li>
+            <li><button onclick="loadPage('huRobot.html')">
+               <span>Hu_Robot</span></button>
+               <div class="s-popUP">--+-</div>
+            </li>
+            <li><button onclick="loadPage('sleepMove.html')">
+              <span>Sleeping Concert: MOVE</span></button>
+              <div class="s-popUP">--+-</div>
+            </li>
+            <li><button onclick="loadPage('BS-A02.html')">
+              <span>BS-A02</span></button>
+              <div class="s-popUP">--+-</div>
+            </li>
+            <li><button onclick="loadPage('laTempesta.html')">
+              <span>La tempesta</span></button>
+              <div class="s-popUP">--+-</div>
+            </li>
+            <li><button onclick="loadPage('works/gb.html')">
+              <span>Gb 2,9 - Sulla retorica di un colpo di pistola</span></button>
+              <div class="s-popUP">--+-</div>
+            </li>
+            <li><button onclick="loadPage('Frari.html')">
+              <span>Frari</span></button>
+              <div class="s-popUP">--+-</div>
+            </li>
+            <li><button onclick="loadPage('unEsperienza.html')">
+              <span>Un'esperienza: l'engajment de l'Etrè</span></button>
+              <div class="s-popUP">--+-</div>
+            </li>
+            <li><button onclick="loadPage('wtsb.html')">
+              <span>Wakening the sleeping Beauty</span></button>
+              <div class="s-popUP">--+-</div>
+            </li>
+          </ul>
+  </div>
+      </section>
+
+      <div class="side-bar">
+      </div>
+
+    </nav>
+
+    <!--<iframe id="frame" src="./asemica.html" frameBorder="0">
+</iframe>-->
+    <div><div id="frame_spacer">
+        </div>
+        <div id="frame">
+        </div>
+      </div>
+
+
+
+      <div id="Bio" class="tabcontent">
+        <p></p>
+      </div>
+
+      <div id="Contatti" class="tabcontent">
+        <p>ricc.santalucia@gmail.com</p>
+      </div>
+      </main>
+
+
+
+
 </body>
+
+
+<!-- SCRIPT -->
+
+<script>
+
+  function openNav(evt, pageName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    console.log(tabcontent)
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    console.log(tablinks)
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    evt.currentTarget.className += " active";
+    document.getElementById(pageName).style.display = "block";
+
+  }
+</script>
+
+
 </html>
+
+<!--
+Gb 2,9 - Sulla retorica di un colpo di pistola
+
+Teatro Comandini, Cesena. All'interno delle giornate di “Essere primitivo” dirette e ideate da Chiara Guidi
+-->
+
