@@ -56,6 +56,15 @@
             margin-bottom: 40px;
             letter-spacing: 0.5px;
             padding-left: 12px;
+            cursor: pointer; /* Make it look clickable */
+            transition: opacity 0.2s ease; /* Subtle hover effect */
+        }
+
+        /* Only show hover effect on devices that support hover (not touch screens) */
+        @media (hover: hover) {
+            .artist-name:hover {
+            opacity: 0.7; /* Subtle hover feedback */
+            }
         }
 
         .about-section {
@@ -70,7 +79,7 @@
             padding: 0px 0px;
             transition: none;
             color: #000;
-            font-size: 22px;
+            font-size: 18px;
             font-weight: 300;
             display: block;
             width: 100%;
@@ -99,6 +108,107 @@
             font-weight: 300;
             background: transparent;
             border: 2px solid rgb(233, 105, 253);
+        }
+
+        .contact-section {
+            margin-top: 0px;
+            padding-top: 0px;
+            border-top: 0px solid #eee;
+        }
+
+        .contact-link {
+            margin-bottom: 3px;
+            cursor: pointer;
+            padding: 0px 0px;
+            transition: none;
+            color: #000;
+            font-size: 18px;
+            font-weight: 300;
+            display: block;
+            width: 100%;
+            background: transparent;
+            border: none;
+        }
+
+        .contact-link-text {
+            padding: 0px 12px;
+            border-radius: 20px;
+            background: transparent;
+            border: 2px solid transparent;
+            display: inline-block;
+            width: fit-content;
+            transition: none;
+        }
+
+        .contact-link:hover .contact-link-text {
+            color: #fff;
+            background: rgb(255, 165, 0); /* Orange color for Contact */
+            border: 2px solid rgb(255, 165, 0);
+        }
+
+        .contact-link.active .contact-link-text {
+            color: #000;
+            font-weight: 300;
+            background: transparent;
+            border: 2px solid rgb(255, 165, 0);
+        }
+
+        .cv-section {
+            margin-top: 0px;
+            padding-top: 0px;
+            border-top: 0px solid #eee;
+        }
+
+        .cv-link {
+            margin-bottom: 3px;
+            cursor: pointer;
+            padding: 0px 0px;
+            transition: none;
+            color: #000;
+            font-size: 18px;
+            font-weight: 300;
+            display: block;
+            width: 100%;
+            background: transparent;
+            border: none;
+        }
+
+        .cv-link-text {
+            padding: 0px 12px;
+            border-radius: 20px;
+            background: transparent;
+            border: 2px solid transparent;
+            display: inline-block;
+            width: fit-content;
+            transition: none;
+        }
+
+        .cv-link:hover .cv-link-text {
+            color: #fff;
+            background: rgb(255, 165, 0);
+            border: 2px solid rgb(255, 165, 0);
+        }
+
+        .cv-link.active .cv-link-text {
+            color: #000;
+            font-weight: 300;
+            background: transparent;
+            border: 2px solid rgb(255, 165, 0);
+        }
+
+        .cv-title-text {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .cv-body-text {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+            font-size: 13px;
         }
 
         .works-list {
@@ -130,7 +240,7 @@
             display: inline-block;
             width: fit-content;
             transition: none;
-}
+        }
 
         .work-item:hover .work-item-text{
             color: #fff;
@@ -162,7 +272,7 @@
             font-weight: 400;
             color: #777;
             margin-bottom: 10px;
-}
+        }
 
         .work-content {
             font-size: 16px;
@@ -184,22 +294,22 @@
             flex-direction: column;
             align-items: center;
             gap: 30px;
-            margin: 40px 0;
-}
+            margin: 20px 0;
+        }
 
         .gallery-item-container {
             width: 100%;
             max-width: 1000px;
             display: flex;
             flex-direction: column;
-}
+        }
 
         .gallery-item {
             width: 100%;
             max-width: 1000px;
             height: auto;
             border-radius: 2px;
-}
+        }
 
         .image-caption {
             font-size: 14px;
@@ -208,7 +318,7 @@
             margin-top: 3px;
             font-style: italic;
             align-self: flex-end; /* This ensures right alignment within the container */
-}
+        }
 
         .placeholder-content {
             background: #f8f8f8;
@@ -217,11 +327,15 @@
             margin: 20px 0;
             font-style: italic;
             color: #888;
-        }  
+        }
 
-        /* Projects button for mobile (hidden on desktop) */
-        .mobile-projects-button {
+        /* Mobile elements (hidden on desktop) */
+        .mobile-projects-button,
+        .mobile-back-button {
             display: none;
+        }
+
+        .mobile-projects-button {
             margin-bottom: 3px;
             cursor: pointer;
             padding: 0px 0px;
@@ -250,15 +364,44 @@
             color: #fff;
             background: rgb(0, 60, 245);
             border: 2px solid rgb(0, 60, 245);
+        }
+
+        .mobile-back-button {
+            margin-bottom: 20px;
+            cursor: pointer;
+            padding: 8px 16px;
+            color: #000;
+            font-size: 18px;
+            font-weight: 300;
+            text-align: center;
+            text-decoration: underline;
+            border: none;
+            background: transparent;
+            width: 100%;
+        }
 
         /* Responsive */
         @media (max-width: 768px) {
+            
             .sidebar {
                 position: relative;
                 width: 100%;
-                height: auto;
+                height: 100vh;
                 padding: 20px 15px;
-                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between; /* Distribute space */
+                align-items: center;
+            }
+
+            /* Reduce sidebar height when viewing content pages */
+            .mobile-view-about .sidebar,
+            .mobile-view-contact .sidebar,
+            .mobile-view-cv .sidebar,
+            .mobile-view-work .sidebar {
+                height: auto; /* Let it size naturally */
+                min-height: auto; /* Remove minimum height */
+                padding-bottom: 10px; /* Small bottom padding */
             }
             
             .content-area {
@@ -270,38 +413,198 @@
                 flex-direction: column;
             }
 
+            /* Artist name stays at top */
             .artist-name {
                 font-size: 24px;
                 text-align: center;
-                margin-bottom: 30px;
+                margin: 0; /* Remove margins, let flexbox handle spacing */
                 padding-left: 0;
+                flex-shrink: 0; /* Don't shrink */
             }
 
-            /* Show mobile elements */
-            .mobile-back-button {
-                display: block;
+            /* Middle section with buttons - this will be centered */
+            .button-group {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                flex: 1; /* Take up remaining space and center vertically */
+                gap: 8vh; /* Distance between Projects button and info buttons */
             }
 
             .mobile-projects-button {
-                display: block;
+            display: block;
+            margin: 0; /* Remove margins */
             }
 
-            /* Initially hide individual works on mobile */
-            .mobile-hide-works .work-item {
-                display: none;
+            /* Group About/CV/Contact together */
+            .info-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 3px; /* Tight spacing between these */
             }
 
-            /* Style adjustments for mobile */
-            .work-item, .about-link {
+
+            /* Bottom spacer - pushes everything up */
+            .spacer {
+            flex-shrink: 0;
+            height: 30px; /* Adjust this to fine-tune positioning */
+            }
+
+            /*.mobile-projects-button,*/
+            .about-section,
+            .cv-section, 
+            .contact-section {
                 text-align: center;
             }
 
-            .work-item-text, .about-link-text {
+            /* Increase mobile spacing */
+            .work-subtitle {
+                margin-bottom: 10px; /* Restore original spacing for mobile */
+            }
+
+            .gallery-vertical {
+                gap: 20px;
+                margin: 40px 0; /* Restore original spacing for mobile */
+            }
+
+            /* Hide individual works by default on mobile */
+            .works-list {
+                display: none;
+                flex-direction: column;
+                align-items: center; /* Center the work items */
+                width: 100%;
+                gap: 0px; /* Space between work items */
+            }
+
+            /* Make sure individual work items are centered */
+            .work-item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+
+            /* Style adjustments for mobile */
+            .about-link, .contact-link, .cv-link {
+                text-align: center;
+            }
+
+            .work-item-text, .about-link-text, .contact-link-text, .cv-link-text {
                 padding: 8px 12px;
             }
 
-            /* Hide content area initially on mobile */
-            .mobile-hide-content .content-area {
+            /* Mobile view states */
+            .mobile-view-home .works-list {
+                display: none;
+            }
+            
+            .mobile-view-home .content-area {
+                display: none;
+            }
+            
+            .mobile-view-home .mobile-back-button {
+                display: none;
+            }
+
+            /* Optional: Override sidebar flexbox when showing projects */
+            .mobile-view-projects .sidebar {
+                justify-content: flex-start; /* Align to top instead of space-between */
+                padding-top: 20px;
+            }
+
+            .mobile-view-projects .works-list {
+                display: flex;
+            }
+            
+            .mobile-view-projects .content-area,
+            .mobile-view-projects .mobile-back-button,
+            .mobile-view-projects .mobile-projects-button,
+            .mobile-view-projects .about-section,
+            .mobile-view-projects .contact-section,
+            .mobile-view-projects .cv-section,
+            .mobile-view-projects .button-group {
+                display: none;
+            }
+
+            /* Reduce spacing in work view */
+            .mobile-view-work .artist-name {
+            margin-bottom: 10px; /* Reduced from 30px */
+            }
+
+            /* Reduce content area top padding in work view */
+            .mobile-view-work .content-area {
+                padding-top: 10px; /* Reduced from 20px */
+            }
+
+            /* Optional: also reduce back button spacing */
+            .mobile-view-work .mobile-back-button {
+                margin-bottom: 5px; /* Reduced from 20px */
+            }            
+
+            .mobile-view-work .sidebar {
+            display: block; /* Keep sidebar visible to show back button */
+            }
+
+            /* Optional: reduce work title top margin */
+            .mobile-view-work .work-title {
+                margin-top: 0;
+            }
+
+            .mobile-view-work .works-list,
+            .mobile-view-work .content-area,
+            .mobile-view-work .mobile-back-button {
+                display: block;
+            }
+
+            .mobile-view-work .works-list {
+                display: none;
+            }
+
+            /* Hide Projects and About buttons when viewing work */
+            .mobile-view-work .mobile-projects-button,
+            .mobile-view-work .about-section,
+            .mobile-view-work .contact-section,
+            .mobile-view-work .cv-section {
+                display: none;
+            }
+
+            /* Mobile states for About and Contact */
+            .mobile-view-about .works-list,
+            .mobile-view-contact .works-list,
+            .mobile-view-cv .works-list {
+                display: none;
+            }
+
+            .mobile-view-about .content-area,
+            .mobile-view-contact .content-area,
+            .mobile-view-cv .content-area {
+                display: block;
+            }
+
+            .mobile-view-about .mobile-back-button,
+            .mobile-view-contact .mobile-back-button,
+            .mobile-view-cv .mobile-back-button {
+                display: none;
+            }
+
+            .mobile-view-about .mobile-projects-button,
+            .mobile-view-contact .mobile-projects-button,
+            .mobile-view-cv .mobile-projects-button {
+                display: none;
+            }
+
+            /* Hide both About and Contact sections when viewing either page */
+            .mobile-view-about .about-section,
+            .mobile-view-about .contact-section,
+            .mobile-view-about .cv-section,
+            .mobile-view-contact .about-section,
+            .mobile-view-contact .contact-section,
+            .mobile-view-contact .cv-section,
+            .mobile-view-cv .about-section,
+            .mobile-view-cv .contact-section,
+            .mobile-view-cv .cv-section {
                 display: none;
             }
         }
@@ -313,20 +616,14 @@
 <!-- The span lets us have a full-width hover area while keeping the visual styling (blue pill/border) tight around just the text itself. -->
 
 <body>
-    <div class="container" id="main-container">
+    <div class="container mobile-view-home" id="main-container">
         <nav class="sidebar" id="sidebar">
-            <div class="artist-name">Riccardo Santalucia</div>
+            <div class="artist-name" onclick="goToLandingPage()">Riccardo Santalucia</div>
             
-            <!-- Mobile Projects Button (hidden on desktop) -->
-            <div class="mobile-projects-button" onclick="showMobileProjects()">
-                <span class="mobile-projects-button-text">Projects</span>
-            </div>
-
             <!-- Mobile Back Button (hidden initially) -->
-            <button class="mobile-back-button" id="mobile-back" onclick="showMobileHome()" style="display: none;">
-                ← Projects
+            <button class="mobile-back-button" id="mobile-back" onclick="showMobileProjects()" style="display: none;">
+            Back to Projects
             </button>
-
 
             <div class="works-list">
                 <div class="work-item" onclick="showWork('Unruly, Undead, Un Un')">
@@ -341,26 +638,46 @@
                 <div class="work-item" onclick="showWork('Yellow Message')">
                     <span class="work-item-text">Yellow Message</span>
                 </div>
-                <div class="work-item" onclick="showWork('Unruly, Undead, Un Un')">
+                <div class="work-item" onclick="showWork('NFNW')">
                     <span class="work-item-text">NFNW</span>
                 </div>
             </div>
 
-            <div class="about-section">
-                <div class="about-link" onclick="showAbout()">
-                    <span class="about-link-text">About</span>
+            <!-- Wrap the mobile buttons in a container -->
+            <div class="button-group">
+                <!-- Mobile Projects Button (hidden on desktop) -->
+                <div class="mobile-projects-button" onclick="showMobileProjects()">
+                    <span class="mobile-projects-button-text">Projects</span>
+                </div>
+
+                <!-- Group the info buttons together -->
+                <div class="info-buttons">
+                    <div class="about-section">
+                        <div class="about-link" onclick="showAbout()">
+                            <span class="about-link-text">About</span>
+                        </div>
+                    </div>
+                    <div class="cv-section">
+                        <div class="cv-link" onclick="showCv()">
+                            <span class="cv-link-text">CV</span>
+                        </div>
+                    </div>
+                    <div class="contact-section">
+                        <div class="contact-link" onclick="showContact()">
+                            <span class="contact-link-text">Contact</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
 
-        
+            <!-- Empty spacer for flexbox -->
+            <div class="spacer"></div>
+
+        </nav>
 
         <main class="content-area">
             <div class="content-display" id="content-display">
-                <div class="work-title">Select a work to view details</div>
-                <div class="work-content">
-                    Choose any artwork from the list on the left to see its description, images, and additional information in this space.
-                </div>
+    
             </div>
         </main>
     </div>
@@ -368,6 +685,24 @@
     <script>
         let currentActiveItem = null;
         let mobileView = 'home'; // 'home', 'projects', 'work'
+
+    // Go to landing page function
+    function goToLandingPage() {
+        // Remove active class from any selected item
+        if (currentActiveItem) {
+            currentActiveItem.classList.remove('active');
+            currentActiveItem = null;
+        }
+
+        // Show default landing content
+        const contentDisplay = document.getElementById('content-display');
+        contentDisplay.innerHTML = '';
+
+        // Handle mobile view - go to home
+        if (isMobile()) {
+            showMobileHome();
+        }
+        }
 
         // Check if we're on mobile
         function isMobile() {
@@ -379,64 +714,33 @@
             if (!isMobile()) return;
 
             const container = document.getElementById('main-container');
-            const backButton = document.getElementById('mobile-back');
-            const contentArea = document.getElementById('content-area');
-            
-            // Show home view: name + Projects + About
-            container.classList.add('mobile-hide-works');
-            container.classList.add('mobile-hide-content');
-            backButton.style.display = 'none';
-            
+            // Set to home view: name + Projects + About
+            container.className = 'container mobile-view-home';
             mobileView = 'home';
         }
 
         function showMobileProjects() {
-            if (!isMobile()) return;
+        if (!isMobile()) return;
 
-            const container = document.getElementById('main-container');
-            const backButton = document.getElementById('mobile-back');
-            
-            // Show projects list: name + back button + works list
-            container.classList.remove('mobile-hide-works');
-            container.classList.add('mobile-hide-content');
-            backButton.style.display = 'block';
-            
-            mobileView = 'projects';
+        const container = document.getElementById('main-container');
+        const backButton = document.getElementById('mobile-back');  // Add this line
+        // Set to projects view: name + back button + works list
+        container.className = 'container mobile-view-projects';
+        backButton.style.display = '';
+        mobileView = 'projects';
         }
 
         function showMobileWork() {
-            if (!isMobile()) return;
+        if (!isMobile()) return;
 
-            const container = document.getElementById('main-container');
-            const backButton = document.getElementById('mobile-back');
-            
-            // Show work view: name + back button + content
-            container.classList.add('mobile-hide-works');
-            container.classList.remove('mobile-hide-content');
-            backButton.style.display = 'block';
-            backButton.innerHTML = 'Projects'; // Change text to "Projects"
-            
-            mobileView = 'work';
-        }
-
-        function showAbout() {
-            // Remove active class from previous item
-            if (currentActiveItem) {
-                currentActiveItem.classList.remove('active');
-            }
-
-            // Add active class to about link
-            const aboutLink = event.target.closest('.about-link');
-            aboutLink.classList.add('active');
-            currentActiveItem = aboutLink;
-
-            // Handle mobile view
-            if (isMobile()) {
-                showMobileWork();
-            }
-
-            // Load about content
-            loadAboutContent();
+        const container = document.getElementById('main-container');
+        const backButton = document.getElementById('mobile-back');
+        
+        // Set to work view: name + back button + content
+        container.className = 'container mobile-view-work';
+        backButton.innerHTML = 'Back to Projects';
+        backButton.style.display = '';
+        mobileView = 'work';
         }
 
         function showWork(title) {
@@ -457,47 +761,6 @@
 
             // Load external HTML file
             loadWorkContent(title);
-        }
-
-        function loadAboutContent() {
-            const contentDisplay = document.getElementById('content-display');
-            
-            const filepath = `about.html`;
-            
-            console.log('Trying to load:', filepath); // Debug log
-            
-            // Show loading message
-            contentDisplay.innerHTML = `
-                <div class="work-title">About</div>
-                <div class="work-content">Loading...</div>
-            `;
-            
-            // Fetch the HTML file
-            fetch(filepath)
-                .then(response => {
-                    console.log('Response status:', response.status); // Debug log
-                    if (!response.ok) {
-                        throw new Error(`Could not load ${filepath} (Status: ${response.status})`);
-                    }
-                    return response.text();
-                })
-                .then(html => {
-                    console.log('Loaded HTML:', html.substring(0, 100)); // Debug log
-                    contentDisplay.innerHTML = html;
-                })
-                .catch(error => {
-                    console.error('Error loading about:', error);
-                    contentDisplay.innerHTML = `
-                        <div class="work-title">About</div>
-                        <div class="work-content" style="color: red;">
-                            Error: Could not load about content.
-                        </div>
-                        <div class="work-content">
-                            Looking for file: <code>${filepath}</code><br>
-                            Error: ${error.message}
-                        </div>
-                    `;
-                });
         }
 
         function loadWorkContent(title) {
@@ -543,23 +806,208 @@
                 });
         }
 
+        function showAbout() {
+            // Remove active class from previous item
+            if (currentActiveItem) {
+                currentActiveItem.classList.remove('active');
+            }
+
+            // Add active class to about link
+            const aboutLink = event.target.closest('.about-link');
+            aboutLink.classList.add('active');
+            currentActiveItem = aboutLink;
+
+            // Handle mobile view - for About, just show content without back button
+            if (isMobile()) {
+                const container = document.getElementById('main-container');
+                container.className = 'container mobile-view-about';
+            }
+
+            // Load about content
+            loadAboutContent();
+        }
+
+        function loadAboutContent() {
+            const contentDisplay = document.getElementById('content-display');
+            
+            const filepath = `about.html`;
+            
+            console.log('Trying to load:', filepath); // Debug log
+            
+            // Show loading message
+            contentDisplay.innerHTML = `
+                <div class="work-title">About</div>
+                <div class="work-content">Loading...</div>
+            `;
+            
+            // Fetch the HTML file
+            fetch(filepath)
+                .then(response => {
+                    console.log('Response status:', response.status); // Debug log
+                    if (!response.ok) {
+                        throw new Error(`Could not load ${filepath} (Status: ${response.status})`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    console.log('Loaded HTML:', html.substring(0, 100)); // Debug log
+                    contentDisplay.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error loading about:', error);
+                    contentDisplay.innerHTML = `
+                        <div class="work-title">About</div>
+                        <div class="work-content" style="color: red;">
+                            Error: Could not load about content.
+                        </div>
+                        <div class="work-content">
+                            Looking for file: <code>${filepath}</code><br>
+                            Error: ${error.message}
+                        </div>
+                    `;
+                });
+        }
+
+        function showContact() {
+            // Remove active class from previous item
+            if (currentActiveItem) {
+                currentActiveItem.classList.remove('active');
+            }
+
+            // Add active class to contact link
+            const contactLink = event.target.closest('.contact-link');
+            contactLink.classList.add('active');
+            currentActiveItem = contactLink;
+
+            // Handle mobile view - for Contact, just show content without back button
+            if (isMobile()) {
+                const container = document.getElementById('main-container');
+                container.className = 'container mobile-view-contact'; // New mobile state for Contact
+            }
+
+            // Load contact content
+            loadContactContent();
+        }
+
+        function loadContactContent() {
+            const contentDisplay = document.getElementById('content-display');
+            
+            const filepath = `contact.html`;
+            
+            console.log('Trying to load:', filepath); // Debug log
+            
+            // Show loading message
+            contentDisplay.innerHTML = `
+                <div class="work-title">Contact</div>
+                <div class="work-content">Loading...</div>
+            `;
+            
+            // Fetch the HTML file
+            fetch(filepath)
+                .then(response => {
+                    console.log('Response status:', response.status); // Debug log
+                    if (!response.ok) {
+                        throw new Error(`Could not load ${filepath} (Status: ${response.status})`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    console.log('Loaded HTML:', html.substring(0, 100)); // Debug log
+                    contentDisplay.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error loading contact:', error);
+                    contentDisplay.innerHTML = `
+                        <div class="work-title">Contact</div>
+                        <div class="work-content" style="color: red;">
+                            Error: Could not load contact content.
+                        </div>
+                        <div class="work-content">
+                            Looking for file: <code>${filepath}</code><br>
+                            Error: ${error.message}
+                        </div>
+                    `;
+                });
+        }
+
+        function showCv() {
+            // Remove active class from previous item
+            if (currentActiveItem) {
+                currentActiveItem.classList.remove('active');
+            }
+
+            // Add active class to cv link
+            const cvLink = event.target.closest('.cv-link');
+            cvLink.classList.add('active');
+            currentActiveItem = cvLink;
+
+            // Handle mobile view - for CV, just show content without back button
+            if (isMobile()) {
+                const container = document.getElementById('main-container');
+                container.className = 'container mobile-view-cv';
+            }
+
+            loadCvContent();
+        }
+
+        function loadCvContent() {
+            const contentDisplay = document.getElementById('content-display');
+            
+            const filepath = `cv.html`;
+            
+            console.log('Trying to load:', filepath); // Debug log
+            
+            // Show loading message
+            contentDisplay.innerHTML = `
+                <div class="work-title">CV</div>
+                <div class="work-content">Loading...</div>
+            `;
+            
+            // Fetch the HTML file
+            fetch(filepath)
+                .then(response => {
+                    console.log('Response status:', response.status); // Debug log
+                    if (!response.ok) {
+                        throw new Error(`Could not load ${filepath} (Status: ${response.status})`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    console.log('Loaded HTML:', html.substring(0, 100)); // Debug log
+                    contentDisplay.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error loading contact:', error);
+                    contentDisplay.innerHTML = `
+                        <div class="work-title">Contact</div>
+                        <div class="work-content" style="color: red;">
+                            Error: Could not load CV content.
+                        </div>
+                        <div class="work-content">
+                            Looking for file: <code>${filepath}</code><br>
+                            Error: ${error.message}
+                        </div>
+                    `;
+                });
+        }
+
         // Handle window resize
         window.addEventListener('resize', function() {
             if (!isMobile()) {
                 // Reset to desktop view
                 const container = document.getElementById('main-container');
-                container.classList.remove('mobile-hide-works');
-                container.classList.remove('mobile-hide-content');
-                document.getElementById('mobile-back').style.display = 'none';
+                container.className = 'container';
             } else {
                 // Initialize mobile view
-                showMobileHome();
+                if (mobileView !== 'work') {
+                    showMobileHome();
+                }
             }
         });
 
-        // Initialize
+        // Initialize with all categories expanded
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Website loaded');
+            console.log('Website loaded'); // Debug log
             if (isMobile()) {
                 showMobileHome();
             }
