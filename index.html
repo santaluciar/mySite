@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riccardo Santalucia</title>
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
     <style>
 
         :root {
@@ -17,7 +23,7 @@
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Libertinus Sans', sans-serif;
             background: #fff;
             color: #333;
             line-height: 1.6;
@@ -29,7 +35,7 @@
         }
 
         .sidebar {
-            width: 400px;
+            width: 450px;
             padding: 40px 30px;
             background: #fff;
             position: fixed;
@@ -55,7 +61,7 @@
         }
 
         .artist-name {
-            font-size: 28px;
+            font-size: 36px;
             font-weight: 500;
             color: #000;
             margin-bottom: 40px;
@@ -92,7 +98,7 @@
             padding: 0px 0px;
             transition: none;
             color: #000;
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 300;
             display: block;
             width: 100%;
@@ -135,7 +141,7 @@
             padding: 0px 0px;
             transition: none;
             color: #000;
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 300;
             display: block;
             width: 100%;
@@ -178,7 +184,7 @@
             padding: 0px 0px;
             transition: none;
             color: #000;
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 300;
             display: block;
             width: 100%;
@@ -236,7 +242,7 @@
             padding: 0px 0px;
             transition: none;
             color: #000;
-            font-size: 22px;
+            font-size: 28px;
             font-weight: 300;
             border-radius: 20px;
             display: block;
@@ -281,13 +287,34 @@
         }
 
         .work-subtitle {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 400;
             color: #777;
             margin-bottom: 10px;
         }
 
         .work-content {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #000;
+            margin-bottom: 30px;
+        }
+
+        .credits-title {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #000;
+            margin-bottom: 2px;
+        }
+
+        .credits-category {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #000;
+            margin-bottom: 2px;
+        }
+
+        .credits-content {
             font-size: 16px;
             line-height: 1.5;
             color: #000;
@@ -315,6 +342,7 @@
             max-width: 1000px;
             display: flex;
             flex-direction: column;
+            gap: 10px;
         }
 
         .gallery-item {
@@ -652,17 +680,14 @@
                 <div class="work-item" onclick="showWork('Unruly, Undead, Un Un')">
                     <span class="work-item-text">Unruly, Undead, Un Un</span>
                 </div>
-                <div class="work-item" onclick="showWork('For Seven Times We Woke Up')">
+                <div class="work-item" onclick="showWork('for-seven-times-we-woke-up')">
                     <span class="work-item-text">For Seven Times We Woke Up</span>
-                </div>
-                <div class="work-item" onclick="showWork('⏎ the ♥')">
-                    <span class="work-item-text">⏎ the ♥</span>
                 </div>
                 <div class="work-item" onclick="showWork('Yellow Message')">
                     <span class="work-item-text">Yellow Message</span>
                 </div>
-                <div class="work-item" onclick="showWork('No Flags No Wind')">
-                    <span class="work-item-text">No Flags No Wind</span>
+                <div class="work-item" onclick="showWork('enter-the-heart')">
+                    <span class="work-item-text">⏎ the ♥</span>
                 </div>
             </div>
 
